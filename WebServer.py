@@ -1,7 +1,19 @@
 #import socket module
 from socket import *
 import sys # In order to terminate the program
+import threading 
 
+def handle_client(clientSocket): #we need a reusable function to handle multiple clients at once
+    try:
+        #receive request
+        #parse filename
+        #open file
+        #send headers
+        #send file contents
+        clientSocket.close()
+    except IOError:
+        #send 404
+        clientSocket.close()
 # Create a TCP socket using IPv4
 serverSocket = socket(AF_INET, SOCK_STREAM) #AF_INET indicates we're using IPv4, SOCK_STREAM indicates a TCP connection.
 
