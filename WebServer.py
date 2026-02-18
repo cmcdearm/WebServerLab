@@ -4,6 +4,7 @@ import sys # In order to terminate the program
 import threading 
 
 def handle_client(connectionSocket): #we need a reusable function to handle multiple clients at once
+    print('new client connected')
     try:
         message = connectionSocket.recv(1024).decode() #using recv to receive request line/headers from the client, with 1024 bytes of buffer
         #then we use .decode() to convert the bytes received from .recv to a string
